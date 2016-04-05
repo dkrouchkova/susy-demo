@@ -1,0 +1,22 @@
+@mixin box() {
+	background: $transwhite;
+	border: solid 2px $transblack;
+}
+
+@mixin clearfixed () {
+	&:after {
+		display: table;
+		content: " ";
+		clear: both;
+	}
+}
+
+css rule but you apply extend to it
+.clearfixed {
+	&:after {
+		display: table;
+		content: " ";
+		clear: both;
+	}
+}
+
