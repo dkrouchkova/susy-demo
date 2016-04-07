@@ -1,7 +1,22 @@
 // Requirements
 // ============
 
+//susy setup map. order matters
 $susy: (
   columns: 12,
   gutters: 1/4,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
 );
+// math: fluid, static
+// output: float, isolate
+// gutter-position: before, after, split, inside
+
+
+@include border-box-sizing;
+
+//breakpoints workaround if you don't have breakpoint installed (from-px to-px)
+$small: 1px 480px;
+$medium: 481px 768px;
+$large: 769px 960px;

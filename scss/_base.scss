@@ -6,8 +6,9 @@ body {
 header,
 nav,
 main,
-section,
-aside {
+aside,
+section
+ {
 	@include box();
 }
 
@@ -16,7 +17,7 @@ main {
 }
 
 aside {
-	@include span(4 at 9);
+	@include span(4);
 }
 
 div,
@@ -25,5 +26,34 @@ section {
 }
 
 .gallery img {
-	@include gallery(2); //each image takes 2 columns so you have 6 images per row
+	@include gallery(4); //each image takes 2 columns so you have 6 images per row
 }
+
+
+//all you need to is change columns
+@include susy-breakpoint ($medium) {
+	main {
+	@include span(6);
+	} //main
+
+	aside {
+		@include span(6);
+	}//aside
+	.gallery img {
+	@include gallery(6); 
+	}//gallery
+}//medium brkpt
+
+@include susy-breakpoint ($small) {
+	main {
+	@include span(12);
+	} //main
+
+	aside {
+		@include span(12);
+	}//aside
+	.gallery img {
+	@include gallery(11); 
+	}//gallery
+}//small brkpt
+
